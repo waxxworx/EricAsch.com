@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offerings — Eric Isaac Asch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #F7F4EF;
+      --linen:    #EDE6D6;
+      --cream:    #F5F0E8;
+      --bark:     #6B5B45;
+      --earth:    #8B7355;
+      --stone:    #9C9385;
+      --ink:      #1C1C1A;
+      --ink-soft: #2E2C28;
+      --rule:     rgba(107, 91, 69, 0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: relative;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      min-height: 80px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.7;
+      transition: opacity 0.25s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--earth); padding-bottom: 2px; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--earth);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .page-intro {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-soft);
+    }
+
+    /* ── OFFERINGS ── */
+    .offerings-list {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem 8rem;
+    }
+
+    .offering {
+      padding: 4rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .offering:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .offering-eyebrow {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .offering h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .offering p {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-soft);
+      margin-bottom: 1.2rem;
+      max-width: 620px;
+    }
+
+    .offering p:last-child { margin-bottom: 0; }
+
+    .offering-meta {
+      margin-top: 2rem;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--stone);
+    }
+
+    .offering-muted {
+      opacity: 0.5;
+    }
+
+    .coming-soon-tag {
+      display: inline-block;
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--stone);
+      border: 1px solid var(--rule);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 3rem;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .footer-left img { width: 30px; }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      color: var(--stone);
+    }
+
+    .footer-right {
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--stone);
+    }
+
+    .footer-right a {
+      color: var(--earth);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s;
+    }
+
+    .footer-right a:hover { border-color: var(--earth); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1.4rem;
+        min-height: auto;
+      }
+      .nav-logo img { width: 48px; height: 48px; }
+      .nav-logo-text { font-size: 1.2rem; }
+      .nav-links { gap: 1.4rem; }
+      .nav-links a { font-size: 0.95rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="nandi.png" alt="Eric Isaac Asch">
+      <span class="nav-logo-text">Eric Isaac Asch</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="offerings.html" class="active">Offerings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header reveal">
+    <span class="page-eyebrow">The Practice</span>
+    <h1 class="page-title">Ways of walking<br>the path together</h1>
+    <p class="page-intro">All of these offerings grow from the same root — an invitation to meet yourself fully, with honesty and without turning away.</p>
+  </header>
+
+  <div class="offerings-list">
+
+    <div class="offering reveal" id="meditation">
+      <span class="offering-eyebrow">Offering</span>
+      <h2>Mindfulness Meditation</h2>
+      <p>Learning to be present with what is — gently, persistently, without judgment. Whether you are brand new to meditation or returning to a lapsed practice, these sessions offer a grounded, accessible entry point into the transformative power of simply paying attention.</p>
+      <p>Taught at Sacred Roots in Charlotte, NC, and online via Zoom. Offered on a love-offering basis.</p>
+      <p class="offering-meta">In person &amp; online &nbsp;·&nbsp; Love-offering basis</p>
+    </div>
+
+    <div class="offering reveal" id="mens-work">
+      <span class="offering-eyebrow">Offering</span>
+      <h2>Men's Work</h2>
+      <p>Spaces for men to gather and see and be seen by other men. Exploring our deep potential to live in integrity — to be strong and also vulnerable. This is not therapy, and it is not performance. It is men sitting together in honest inquiry about what it means to be alive and fully present in our lives.</p>
+      <p class="offering-meta">In person &nbsp;·&nbsp; Charlotte, NC</p>
+    </div>
+
+    <div class="offering reveal" id="rites">
+      <span class="offering-eyebrow">Offering</span>
+      <h2>Rites of Passage</h2>
+      <p>Marking thresholds with intention. Crossing from one chapter of life into the next. These are ceremonial experiences designed to honor the transitions that matter — from boyhood to manhood, from one life to another, from loss toward renewal. Every threshold deserves to be crossed with witnesses.</p>
+      <p class="offering-meta">In person &nbsp;·&nbsp; By arrangement</p>
+    </div>
+
+    <div class="offering offering-muted reveal" id="coaching">
+      <span class="coming-soon-tag">Coming Soon</span>
+      <h2>1-1 Coaching</h2>
+      <p>For men at a threshold — navigating a major life transition, seeking deeper integrity, or simply ready to look more honestly at their lives. In person, online, or both.</p>
+    </div>
+
+    <div class="offering offering-muted reveal" id="couples">
+      <span class="coming-soon-tag">Coming Soon</span>
+      <h2>Couples Workshops</h2>
+      <p>Bringing presence and honesty into relationship — with yourself and with another. More details to come.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <img src="nandi.png" alt="">
+      <span class="footer-name">Eric Isaac Asch</span>
+    </div>
+    <p class="footer-right">
+      <a id="email-link" href="#">eric&#64;ericasch.com</a>
+      &nbsp;·&nbsp; Charlotte, NC &amp; online
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
