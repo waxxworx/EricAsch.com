@@ -68,14 +68,17 @@
       transition: filter 0.4s;
     }
 
-    /* dark ink version for light bg */
-    .nav-logo img.ink {
-      filter: brightness(0) saturate(100%) invert(14%) sepia(8%) saturate(600%) hue-rotate(10deg) brightness(85%);
+    /* default — white for hero */
+    .nav-logo img {
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: filter 0.4s;
     }
 
-    /* white version for hero */
-    .nav-logo img.white {
-      filter: brightness(0) invert(1) opacity(0.9);
+    /* dark ink version once scrolled past hero */
+    nav.scrolled .nav-logo img {
+      filter: brightness(0) saturate(100%) invert(14%) sepia(8%) saturate(600%) hue-rotate(10deg) brightness(85%);
+      opacity: 1;
     }
 
     .nav-logo-text {
@@ -164,7 +167,7 @@
     .hero-eyebrow {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.75rem;
+      font-size: 0.9rem;
       letter-spacing: 0.3em;
       color: rgba(245,240,232,0.65);
       margin-bottom: 1.8rem;
@@ -173,7 +176,7 @@
     .hero-question {
       font-weight: 300;
       font-style: italic;
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-size: clamp(2.65rem, 6.6vw, 4.55rem);
       line-height: 1.2;
       color: var(--cream);
       text-shadow: 0 2px 30px rgba(28,28,26,0.25);
@@ -530,12 +533,12 @@
       <span class="footer-name">Eric Isaac Asch</span>
     </div>
     <p class="footer-right">
-      <a href="mailto:eric@ericasch.com">eric@ericasch.com</a>
+      <a href="/cdn-cgi/l/email-protection#a0c5d2c9c3e0c5d2c9c3c1d3c3c88ec3cfcd"><span class="__cf_email__" data-cfemail="8eebfce7edceebfce7edeffdede6a0ede1e3">[email&#160;protected]</span></a>
       &nbsp;·&nbsp; Charlotte, NC &amp; online
     </p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const nav = document.getElementById('main-nav');
     const logoImg = document.getElementById('nav-logo-img');
     const heroEl = document.getElementById('hero');
@@ -543,11 +546,8 @@
     function updateNav() {
       const pastHero = window.scrollY > heroEl.offsetHeight - 100;
       const scrolled  = window.scrollY > 50;
-
       nav.classList.toggle('scrolled', scrolled);
       nav.classList.toggle('over-hero', !pastHero);
-
-      logoImg.className = pastHero ? 'ink' : 'white';
     }
 
     window.addEventListener('scroll', updateNav, { passive: true });
@@ -557,14 +557,4 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 70);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
-
-</body>
-</html>
+          setTimeout(() => entry.tar
