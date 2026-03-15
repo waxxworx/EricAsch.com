@@ -17,7 +17,6 @@
       --warm-white: #FAF7F2;
       --bark:       #6B5B45;
       --earth:      #8B7355;
-      --moss:       #4A5240;
       --stone:      #9C9385;
       --ink:        #1C1C1A;
       --ink-soft:   #2E2C28;
@@ -31,6 +30,7 @@
       color: var(--ink);
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
+      font-size: 18px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -62,32 +62,30 @@
     }
 
     .nav-logo img {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
-      transition: filter 0.4s;
-    }
-
-    /* default — white for hero */
-    .nav-logo img {
+      /* Start white for hero */
       filter: brightness(0) invert(1);
-      opacity: 0.9;
-      transition: filter 0.4s;
+      opacity: 0.92;
+      transition: filter 0.4s ease, opacity 0.4s ease;
     }
 
-    /* dark ink version once scrolled past hero */
     nav.scrolled .nav-logo img {
-      filter: brightness(0) saturate(100%) invert(14%) sepia(8%) saturate(600%) hue-rotate(10deg) brightness(85%);
-      opacity: 1;
+      filter: brightness(0) sepia(0.3) saturate(0.8);
+      opacity: 0.75;
     }
 
     .nav-logo-text {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 0.14em;
-      transition: color 0.4s, opacity 0.4s;
+      color: var(--cream);
+      transition: color 0.4s;
     }
+
+    nav.scrolled .nav-logo-text { color: var(--ink); }
 
     .nav-links {
       display: flex;
@@ -98,22 +96,16 @@
     .nav-links a {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       letter-spacing: 0.18em;
       text-decoration: none;
+      color: var(--cream);
+      opacity: 0.85;
       transition: color 0.4s, opacity 0.25s;
-      opacity: 0.8;
     }
 
-    .nav-links a:hover { opacity: 1; }
-
-    /* Hero state — white text */
-    nav.over-hero .nav-logo-text,
-    nav.over-hero .nav-links a { color: var(--cream); }
-
-    /* Scrolled state — dark text */
-    nav.scrolled .nav-logo-text,
     nav.scrolled .nav-links a { color: var(--ink); }
+    .nav-links a:hover { opacity: 1; }
 
     /* ── HERO ── */
     .hero {
@@ -143,9 +135,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(28,28,26,0.12) 0%,
-        rgba(28,28,26,0.55) 42%,
-        rgba(28,28,26,0.4)  68%,
+        rgba(28,28,26,0.1)  0%,
+        rgba(28,28,26,0.58) 40%,
+        rgba(28,28,26,0.42) 65%,
         rgba(28,28,26,0.08) 100%
       );
     }
@@ -167,19 +159,19 @@
     .hero-eyebrow {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      color: rgba(245,240,232,0.65);
+      font-size: 1rem;
+      letter-spacing: 0.32em;
+      color: rgba(245,240,232,0.7);
       margin-bottom: 1.8rem;
     }
 
     .hero-question {
       font-weight: 300;
       font-style: italic;
-      font-size: clamp(2.65rem, 6.6vw, 4.55rem);
+      font-size: clamp(2.8rem, 6.5vw, 4.8rem);
       line-height: 1.2;
       color: var(--cream);
-      text-shadow: 0 2px 30px rgba(28,28,26,0.25);
+      text-shadow: 0 2px 32px rgba(28,28,26,0.3);
       margin-bottom: 2.5rem;
     }
 
@@ -193,7 +185,7 @@
     .hero-cta {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.78rem;
+      font-size: 0.95rem;
       letter-spacing: 0.24em;
       color: var(--cream);
       text-decoration: none;
@@ -212,7 +204,7 @@
       transform: translateX(-50%);
       z-index: 2;
       opacity: 0;
-      animation: riseIn 1.5s ease 2s forwards;
+      animation: riseIn 1.5s ease 2.2s forwards;
     }
 
     .scroll-line {
@@ -224,13 +216,13 @@
     }
 
     @keyframes pulse {
-      0%,100% { opacity: 0.45; }
+      0%,100% { opacity: 0.4; }
       50%      { opacity: 1; }
     }
 
     /* ── INTRO ── */
     .intro {
-      max-width: 620px;
+      max-width: 640px;
       margin: 0 auto;
       padding: 8rem 2rem 6rem;
       text-align: center;
@@ -239,14 +231,15 @@
     .section-eyebrow {
       font-family: 'Cormorant SC', Georgia, serif;
       font-weight: 300;
-      font-size: 0.72rem;
+      font-size: 0.85rem;
       letter-spacing: 0.3em;
       color: var(--earth);
       margin-bottom: 2rem;
+      display: block;
     }
 
     .intro p {
-      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
       font-weight: 300;
       line-height: 1.8;
       color: var(--ink-soft);
@@ -284,7 +277,6 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       border: 1px solid var(--rule);
-      gap: 0;
     }
 
     .tile {
@@ -295,7 +287,7 @@
       background: var(--warm-white);
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 1rem;
       transition: background 0.3s;
     }
 
@@ -303,33 +295,33 @@
     .tile:hover { background: var(--linen); }
 
     .tile-muted {
-      opacity: 0.45;
+      opacity: 0.4;
       cursor: default;
       pointer-events: none;
-    }
-
-    .tile-coming-soon {
-      font-style: italic !important;
-      color: var(--stone) !important;
     }
 
     .tile-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 400;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       line-height: 1.3;
     }
 
     .tile-desc {
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 300;
       line-height: 1.7;
       color: var(--bark);
       flex: 1;
     }
 
+    .tile-coming-soon {
+      font-style: italic;
+      color: var(--stone) !important;
+    }
+
     .tile-arrow {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--stone);
       display: inline-block;
       transition: transform 0.25s, color 0.25s;
@@ -351,7 +343,7 @@
       max-width: 520px;
       margin: 0 auto;
       font-style: italic;
-      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
       font-weight: 300;
       line-height: 1.85;
       color: var(--ink-soft);
@@ -359,10 +351,10 @@
 
     .quote cite {
       display: block;
-      margin-top: 1.6rem;
+      margin-top: 1.8rem;
       font-family: 'Cormorant SC', Georgia, serif;
       font-style: normal;
-      font-size: 0.72rem;
+      font-size: 0.9rem;
       letter-spacing: 0.22em;
       color: var(--stone);
     }
@@ -381,25 +373,25 @@
     .footer-left {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.7rem;
     }
 
     .footer-left img {
-      width: 26px;
+      width: 30px;
       opacity: 0.35;
-      filter: brightness(0) saturate(100%) invert(14%) sepia(8%) saturate(600%) hue-rotate(10deg) brightness(85%);
+      filter: brightness(0) sepia(0.3) saturate(0.8);
     }
 
     .footer-name {
       font-family: 'Cormorant SC', Georgia, serif;
-      font-size: 0.78rem;
+      font-size: 0.95rem;
       letter-spacing: 0.14em;
       color: var(--stone);
     }
 
     .footer-right {
       font-style: italic;
-      font-size: 0.88rem;
+      font-size: 1rem;
       color: var(--stone);
     }
 
@@ -416,8 +408,7 @@
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
       .tile:nth-child(3) { border-right: none; }
-      .tile:nth-child(4),
-      .tile:nth-child(5) { border-top: 1px solid var(--rule); }
+      .tile:nth-child(n+4) { border-top: 1px solid var(--rule); }
       .tile:nth-child(5) { border-right: none; }
     }
 
@@ -452,9 +443,9 @@
 </head>
 <body>
 
-  <nav id="main-nav" class="over-hero">
+  <nav id="main-nav">
     <a href="/" class="nav-logo">
-      <img id="nav-logo-img" src="nandi_1.jpeg" alt="Eric Isaac Asch" class="white">
+      <img src="nandi_1.jpeg" alt="Eric Isaac Asch">
       <span class="nav-logo-text">Eric Isaac Asch</span>
     </a>
     <ul class="nav-links">
@@ -479,7 +470,7 @@
   </section>
 
   <section class="intro reveal">
-    <p class="section-eyebrow">The work</p>
+    <span class="section-eyebrow">The work</span>
     <p>
       This is an invitation to <em>meet yourself fully</em> — with honesty, with compassion, and without turning away. Through meditation, men's work, rites of passage, and couples practice, we find our way back to what is most true.
     </p>
@@ -533,21 +524,23 @@
       <span class="footer-name">Eric Isaac Asch</span>
     </div>
     <p class="footer-right">
-      <a href="/cdn-cgi/l/email-protection#a0c5d2c9c3e0c5d2c9c3c1d3c3c88ec3cfcd"><span class="__cf_email__" data-cfemail="8eebfce7edceebfce7edeffdede6a0ede1e3">[email&#160;protected]</span></a>
+      <!-- email split to prevent Cloudflare obfuscation -->
+      <a id="email-link" href="#">eric&#64;ericasch.com</a>
       &nbsp;·&nbsp; Charlotte, NC &amp; online
     </p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
+    // Fix email link (prevents Cloudflare from mangling it)
+    document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
+
+    // Nav scroll behavior
     const nav = document.getElementById('main-nav');
-    const logoImg = document.getElementById('nav-logo-img');
     const heroEl = document.getElementById('hero');
 
     function updateNav() {
-      const pastHero = window.scrollY > heroEl.offsetHeight - 100;
-      const scrolled  = window.scrollY > 50;
+      const scrolled = window.scrollY > 50;
       nav.classList.toggle('scrolled', scrolled);
-      nav.classList.toggle('over-hero', !pastHero);
     }
 
     window.addEventListener('scroll', updateNav, { passive: true });
@@ -557,4 +550,14 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.tar
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
