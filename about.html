@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Eric Isaac Asch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #F7F4EF;
+      --linen:    #EDE6D6;
+      --cream:    #F5F0E8;
+      --bark:     #6B5B45;
+      --earth:    #8B7355;
+      --stone:    #9C9385;
+      --ink:      #1C1C1A;
+      --ink-soft: #2E2C28;
+      --rule:     rgba(107, 91, 69, 0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: relative;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      min-height: 80px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.7;
+      transition: opacity 0.25s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--earth); padding-bottom: 2px; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--earth);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    /* ── HERO PHOTO ── */
+    .photo-hero {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+    }
+
+    .photo-hero img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    /* ── BODY CONTENT ── */
+    .about-body {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .about-body p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-body em {
+      font-style: italic;
+      color: var(--bark);
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 2px solid var(--earth);
+      padding: 0.5rem 0 0.5rem 2rem;
+      margin: 3rem 0;
+    }
+
+    .pull-quote p {
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem) !important;
+      color: var(--bark) !important;
+      line-height: 1.75 !important;
+      margin: 0 !important;
+    }
+
+    /* ── INLINE PHOTO ── */
+    .photo-inline {
+      margin: 2.5rem 0;
+    }
+
+    .photo-inline img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    /* ── SECONDARY PHOTO ── */
+    .photo-secondary {
+      max-width: 680px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .photo-secondary img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* ── CREDENTIALS ── */
+    .credentials {
+      background: var(--linen);
+      padding: 5rem 2rem;
+      margin-bottom: 0;
+    }
+
+    .credentials-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .credentials h3 {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--earth);
+      margin-bottom: 2.5rem;
+    }
+
+    .cred-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .cred-list li {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .cred-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--stone);
+    }
+
+    /* ── QUOTE ── */
+    .quote {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .quote blockquote {
+      max-width: 520px;
+      margin: 0 auto;
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-soft);
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 1.6rem;
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-style: normal;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      color: var(--stone);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 3rem;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .footer-left img {
+      width: 30px;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      color: var(--stone);
+    }
+
+    .footer-right {
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--stone);
+    }
+
+    .footer-right a {
+      color: var(--earth);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s;
+    }
+
+    .footer-right a:hover { border-color: var(--earth); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1.4rem;
+        min-height: auto;
+      }
+      .nav-logo img { width: 48px; height: 48px; }
+      .nav-logo-text { font-size: 1.2rem; }
+      .nav-links { gap: 1.4rem; }
+      .nav-links a { font-size: 0.95rem; }
+      .photo-hero img { height: 360px; }
+      .photo-secondary img { height: 280px; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="nandi.png" alt="Eric Isaac Asch">
+      <span class="nav-logo-text">Eric Isaac Asch</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="offerings.html">Offerings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header reveal">
+    <span class="page-eyebrow">About</span>
+    <h1 class="page-title">The path is made<br>by walking</h1>
+  </header>
+
+  <div class="photo-hero reveal">
+    <img src="about-hero.jpg" alt="Eric Isaac Asch">
+  </div>
+
+  <div class="about-body">
+
+    <p class="reveal">
+      More than ten years ago, I got sober. Not because I had hit a dramatic bottom, but because I could see clearly enough to know that I wanted to become a different kind of man — a better father to my sons, and a more honest version of myself. That decision turned out to be a doorway into something far larger than I expected.
+    </p>
+
+    <p class="reveal">
+      Getting sober cracked me open. It began a long inquiry into what it actually means to be a man, to be present, to be of use to the people I love. I started seeking out men's work — circles, rites, initiatory experiences — first because I needed it myself, and later because I wanted my sons to have what I had not: elders who could help them cross thresholds with intention, and a community of men who knew how to hold one another.
+    </p>
+
+    <div class="photo-inline reveal">
+      <img src="about-facilitating.jpg" alt="Eric facilitating a men's circle">
+    </div>
+
+    <div class="pull-quote reveal">
+      <p>I became the guide I needed when I was younger. And I'm still becoming him.</p>
+    </div>
+
+    <p class="reveal">
+      The loss of my mother deepened everything. Grief has a way of stripping away the surface of things, leaving you standing in front of questions you can no longer defer. Who am I without the roles I play? What do I actually believe? What does it mean to live with integrity, all the way down? Those questions sent me further inward — into meditation, into plant medicine work, into the slow and nonlinear process of learning to be present with what is, rather than what I wished it were.
+    </p>
+
+    <p class="reveal">
+      I work in corporate technology and teach graduate-level courses in AI ethics. I live in the world — the fast, pressured, screen-saturated world that most of us inhabit. I know what it is to do this inner work not from a retreat center, but from inside a full and complicated life. That is not a limitation. I think it is the point.
+    </p>
+
+    <p class="reveal">
+      I am currently completing my certification as a mindfulness meditation teacher through the Mindfulness Meditation Teacher Certification Program with Tara Brach and Jack Kornfield. I teach at Sacred Roots in Charlotte, NC, and online, on a love-offering basis.
+    </p>
+
+    <p class="reveal">
+      I am not someone who has arrived. I am someone who has learned — through loss, through failure, through practice — that the path is made by walking it. If you are ready to walk yours more honestly, I would be honored to walk alongside you.
+    </p>
+
+  </div>
+
+  <div class="photo-secondary reveal">
+    <img src="about-secondary.jpg" alt="Eric in the mountains">
+  </div>
+
+  <section class="credentials reveal">
+    <div class="credentials-inner">
+      <h3>Training &amp; Practice</h3>
+      <ul class="cred-list">
+        <li>Mindfulness Meditation Teacher Certification Program (MMTCP) with Tara Brach and Jack Kornfield — in formation</li>
+        <li>Men's work, rites of passage facilitation, and initiatory practice — over a decade of personal and group experience</li>
+        <li>Plant medicine integration and expanded healing practices</li>
+        <li>Ten years of sobriety and recovery work</li>
+        <li>Corporate technology leader and graduate instructor in AI ethics — bringing practice into the realities of modern life</li>
+        <li>Teaching at Sacred Roots, Charlotte, NC — love-offering basis</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="quote reveal">
+    <blockquote>
+      Traveler, there is no path.<br>The path is made by walking.
+      <cite>— Antonio Machado</cite>
+    </blockquote>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <img src="nandi.png" alt="">
+      <span class="footer-name">Eric Isaac Asch</span>
+    </div>
+    <p class="footer-right">
+      <a id="email-link" href="#">eric&#64;ericasch.com</a>
+      &nbsp;·&nbsp; Charlotte, NC &amp; online
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
