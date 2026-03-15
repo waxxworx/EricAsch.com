@@ -257,11 +257,9 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      border: 1px solid var(--rule);
     }
 
     .tile {
-      border-right: 1px solid var(--rule);
       padding: 2.8rem 1.8rem 2.4rem;
       text-decoration: none;
       color: var(--ink);
@@ -272,7 +270,6 @@
       transition: background 0.3s;
     }
 
-    .tile:last-child { border-right: none; }
     .tile:hover { background: var(--linen); }
 
     .tile-muted {
@@ -302,10 +299,11 @@
     }
 
     .tile-arrow {
-      font-size: 1rem;
-      color: var(--stone);
+      font-size: 1.1rem;
+      color: var(--earth);
       display: inline-block;
-      transition: transform 0.25s, color 0.25s;
+      transition: transform 0.3s, color 0.25s;
+      letter-spacing: -0.05em;
     }
 
     .tile:hover .tile-arrow {
@@ -392,28 +390,31 @@
       letter-spacing: 0.1em;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
-      .tile:nth-child(3) { border-right: none; }
-      .tile:nth-child(n+4) { border-top: 1px solid var(--rule); }
-      .tile:nth-child(5) { border-right: none; }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem 1.4rem;
+        min-height: auto;
+      }
+      .nav-logo img { width: 48px; height: 48px; }
+      .nav-logo-text { font-size: 1.2rem; }
+      .nav-links { gap: 1.4rem; }
+      .nav-links a { font-size: 0.95rem; }
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0.8rem 1.4rem; }
-      .nav-links { gap: 1.2rem; }
       .grid { grid-template-columns: 1fr 1fr; }
-      .tile { border-right: 1px solid var(--rule); }
-      .tile:nth-child(2n) { border-right: none; }
-      .tile:nth-child(n+3) { border-top: 1px solid var(--rule); }
       footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
     }
 
     @media (max-width: 380px) {
       .grid { grid-template-columns: 1fr; }
-      .tile { border-right: none !important; border-top: 1px solid var(--rule); }
-      .tile:first-child { border-top: none; }
     }
 
     /* ── REVEAL ── */
@@ -449,7 +450,6 @@
       <p class="hero-eyebrow">Eric Isaac Asch</p>
       <h1 class="hero-question">Are you ready to meet<br>yourself honestly?</h1>
       <div class="hero-rule"></div>
-      <a href="offerings.html" class="hero-cta">Explore the work</a>
     </div>
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
@@ -457,9 +457,8 @@
   </section>
 
   <section class="intro reveal">
-    <span class="section-eyebrow">The work</span>
     <p>
-      This is an invitation to <em>meet yourself fully</em> — with honesty, with compassion, and without turning away. Through meditation, men's work, rites of passage, and couples practice, we find our way back to what is most true.
+      This is an invitation to meet yourself fully — with honesty, with compassion, and without turning away. If you are seeking a more grounded and authentic way of being in the world, this is an invitation to explore that together.
     </p>
   </section>
 
@@ -473,23 +472,22 @@
         <a href="offerings.html#meditation" class="tile reveal">
           <h3 class="tile-title">Mindfulness Meditation</h3>
           <p class="tile-desc">Learning to be present with what is — gently, persistently, without judgment.</p>
-          <span class="tile-arrow">→</span>
+          <span class="tile-arrow">&#10230;</span>
         </a>
         <a href="offerings.html#mens-work" class="tile reveal">
           <h3 class="tile-title">Men's Work</h3>
-          <p class="tile-desc">A space for men to go beneath the surface and discover what lies underneath.</p>
-          <span class="tile-arrow">→</span>
+          <p class="tile-desc">Spaces for men to gather and see and be seen by other men. Exploring our deep potential to live in integrity — to be strong and also vulnerable.</p>
+          <span class="tile-arrow">&#10230;</span>
         </a>
         <a href="offerings.html#rites" class="tile reveal">
           <h3 class="tile-title">Rites of Passage</h3>
           <p class="tile-desc">Marking thresholds with intention. Crossing from one chapter of life into the next.</p>
-          <span class="tile-arrow">→</span>
+          <span class="tile-arrow">&#10230;</span>
         </a>
-        <a href="offerings.html#coaching" class="tile reveal">
+        <div class="tile tile-muted reveal">
           <h3 class="tile-title">1-1 Coaching</h3>
-          <p class="tile-desc">For men at a threshold. In person, online, or both.</p>
-          <span class="tile-arrow">→</span>
-        </a>
+          <p class="tile-desc tile-coming-soon">coming soon</p>
+        </div>
         <div class="tile tile-muted reveal">
           <h3 class="tile-title">Couples Workshops</h3>
           <p class="tile-desc tile-coming-soon">coming soon</p>
@@ -513,7 +511,7 @@
     <p class="footer-right">
       <a id="email-link" href="#">eric&#64;ericasch.com</a>
       &nbsp;·&nbsp; Charlotte, NC &amp; online
-      &nbsp;·&nbsp; <span class="version">v7</span>
+      &nbsp;·&nbsp; <span class="version">v12</span>
     </p>
   </footer>
 
