@@ -36,46 +36,27 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: relative;
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.5rem 3rem;
-      transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav.scrolled {
-      background: rgba(250, 247, 242, 0.96);
-      backdrop-filter: blur(10px);
-      padding: 1rem 3rem;
-      border-bottom-color: var(--rule);
+      padding: 1.2rem 3rem;
+      background: var(--linen);
+      border-bottom: 1px solid var(--rule);
     }
 
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.9rem;
       text-decoration: none;
     }
 
     .nav-logo img {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
       object-fit: contain;
-      /* Remove white background, show just the logo shape in white */
-      filter: invert(1);
-      mix-blend-mode: screen;
-      opacity: 0.92;
-      transition: filter 0.4s ease, opacity 0.4s ease, mix-blend-mode 0.4s ease;
-    }
-
-    nav.scrolled .nav-logo img {
-      filter: none;
-      mix-blend-mode: normal;
-      opacity: 0.8;
     }
 
     .nav-logo-text {
@@ -83,11 +64,8 @@
       font-weight: 400;
       font-size: 1.2rem;
       letter-spacing: 0.14em;
-      color: var(--cream);
-      transition: color 0.4s;
+      color: var(--ink);
     }
-
-    nav.scrolled .nav-logo-text { color: var(--ink); }
 
     .nav-links {
       display: flex;
@@ -101,12 +79,11 @@
       font-size: 1.1rem;
       letter-spacing: 0.18em;
       text-decoration: none;
-      color: var(--cream);
-      opacity: 0.9;
-      transition: color 0.4s, opacity 0.25s;
+      color: var(--ink);
+      opacity: 0.7;
+      transition: opacity 0.25s;
     }
 
-    nav.scrolled .nav-links a { color: var(--ink); }
     .nav-links a:hover { opacity: 1; }
 
     /* ── HERO ── */
@@ -447,7 +424,7 @@
 
   <nav id="main-nav">
     <a href="/" class="nav-logo">
-      <img src="nandi_1.jpeg" alt="Eric Isaac Asch" onerror="this.style.outline='3px solid red';this.style.width='40px';this.style.height='40px'">
+      <img src="nandi_1.jpeg" alt="Eric Isaac Asch">
       <span class="nav-logo-text">Eric Isaac Asch</span>
     </a>
     <ul class="nav-links">
@@ -530,26 +507,11 @@
       <!-- email split to prevent Cloudflare obfuscation -->
       <a id="email-link" href="#">eric&#64;ericasch.com</a>
       &nbsp;·&nbsp; Charlotte, NC &amp; online
-      &nbsp;·&nbsp; <span style="font-size:0.85rem;opacity:1;font-style:normal;font-family:'Cormorant SC',serif;letter-spacing:0.1em;color:var(--bark)">v4</span>
+      &nbsp;·&nbsp; <span style="font-size:0.85rem;opacity:1;font-style:normal;font-family:'Cormorant SC',serif;letter-spacing:0.1em;color:var(--bark)">v5</span>
     </p>
   </footer>
 
   <script>
-    // Fix email link (prevents Cloudflare from mangling it)
-    document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
-
-    // Nav scroll behavior
-    const nav = document.getElementById('main-nav');
-    const heroEl = document.getElementById('hero');
-
-    function updateNav() {
-      const scrolled = window.scrollY > 50;
-      nav.classList.toggle('scrolled', scrolled);
-    }
-
-    window.addEventListener('scroll', updateNav, { passive: true });
-    updateNav();
-
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -561,6 +523,9 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Fix email link
+    document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
   </script>
 
 </body>
