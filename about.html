@@ -115,22 +115,6 @@
       color: var(--ink);
     }
 
-    /* ── HERO PHOTO ── */
-    .photo-hero {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto 6rem;
-      padding: 0 2rem;
-    }
-
-    .photo-hero img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
-
     /* ── BODY CONTENT ── */
     .about-body {
       max-width: 680px;
@@ -168,32 +152,28 @@
       margin: 0 !important;
     }
 
-    /* ── INLINE PHOTO ── */
-    .photo-inline {
-      margin: 2.5rem 0;
-    }
-
-    .photo-inline img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
-
-    /* ── SECONDARY PHOTO ── */
-    .photo-secondary {
-      max-width: 680px;
-      margin: 0 auto 4rem;
+    /* ── BOTTOM PHOTO ── */
+    .photo-bottom {
+      max-width: 420px;
+      margin: 0 auto 5rem;
       padding: 0 2rem;
+      text-align: center;
     }
 
-    .photo-secondary img {
+    .photo-bottom img {
       width: 100%;
-      height: 400px;
+      height: 320px;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center 15%;
       display: block;
+    }
+
+    .photo-caption {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--stone);
+      margin-top: 0.8rem;
+      letter-spacing: 0.04em;
     }
 
     /* ── CREDENTIALS ── */
@@ -359,10 +339,6 @@
     <h1 class="page-title">The path is made<br>by walking</h1>
   </header>
 
-  <div class="photo-hero reveal">
-    <img src="about-hero.jpg" alt="Eric Isaac Asch">
-  </div>
-
   <div class="about-body">
 
     <p class="reveal">
@@ -372,10 +348,6 @@
     <p class="reveal">
       Getting sober cracked me open. It began a long inquiry into what it actually means to be a man, to be present, to be of use to the people I love. I started seeking out men's work — circles, rites, initiatory experiences — first because I needed it myself, and later because I wanted my sons to have what I had not: elders who could help them cross thresholds with intention, and a community of men who knew how to hold one another.
     </p>
-
-    <div class="photo-inline reveal">
-      <img src="about-facilitating.jpg" alt="Eric facilitating a men's circle">
-    </div>
 
     <div class="pull-quote reveal">
       <p>I became the guide I needed when I was younger. And I'm still becoming him.</p>
@@ -399,8 +371,9 @@
 
   </div>
 
-  <div class="photo-secondary reveal">
-    <img src="about-secondary.jpg" alt="Eric in the mountains">
+  <div class="photo-bottom reveal">
+    <img src="about-facilitating.jpg" alt="Eric facilitating">
+    <p class="photo-caption">Facilitating a men's circle</p>
   </div>
 
   <section class="credentials reveal">
