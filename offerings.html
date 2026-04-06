@@ -200,6 +200,46 @@
       margin-bottom: 1rem;
     }
 
+    /* ── COACHING SUB ── */
+    .coaching-sub {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .coaching-item h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .coaching-item p {
+      font-size: 1rem !important;
+      color: var(--bark) !important;
+    }
+
+    .coaching-item a {
+      color: var(--earth);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139, 115, 85, 0.35);
+      transition: border-color 0.25s;
+    }
+
+    .coaching-item a:hover { border-color: var(--earth); }
+
+    @media (max-width: 600px) {
+      .coaching-sub { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* ── QUOTE ── */
     .quote {
       background: var(--linen);
@@ -322,8 +362,8 @@
     <div class="offering reveal" id="meditation">
       <span class="offering-eyebrow">Offering</span>
       <h2>Mindfulness Meditation</h2>
-      <p>I came to meditation not as a spiritual seeker but as someone who needed to get out of his own head. What I found was something much bigger than stress relief — a practice for actually being present in your life, not just observing it from a distance.</p>
-      <p>These sessions are accessible to anyone. You don't need experience, a cushion, or any particular belief system. You just need to show up. We meet at Sacred Roots in Charlotte and online via Zoom.</p>
+      <p>I came to meditation not as a spiritual seeker but as someone who needed to get out of his own head. What I found was something much bigger than stress relief — a practice for actually being present in your life, not just being swept away by the emotions and churn of your Life.</p>
+      <p>These sessions are accessible to anyone. You don't need experience, a cushion, or any particular belief system. You just need to show up. I'm offering an <a href="https://www.sacredrootsnc.com/event-details/introduction-to-mindfulness-meditation-2026-06-04-19-00" target="_blank" rel="noopener">Introduction to Mindfulness Meditation</a> at Sacred Roots in Charlotte June 2026 and online via Zoom late summer and fall (details coming soon).</p>
       <p class="offering-meta">In person &amp; online</p>
     </div>
 
@@ -331,29 +371,37 @@
       <span class="offering-eyebrow">Offering</span>
       <h2>Connection Circles</h2>
       <p>There is something that happens when people gather with the genuine intention of seeing and being seen — not performing, not competing, not fixing each other. Something opens up. These circles create that container.</p>
-      <p>Right now I'm running a <a href="https://www.sacredrootsnc.com/event-details/sacred-roots-mens-group-2026-03-25-19-00" target="_blank" rel="noopener">men's circle at Sacred Roots</a> in Charlotte — a space for men to gather in honest inquiry about what it means to be alive and fully present. Women's circles and online circles are forming. Whatever your gender, the invitation is the same: come as you are, and be willing to go a little deeper.</p>
+      <p>Currently I facilitate a <a href="https://www.sacredrootsnc.com/event-details/sacred-roots-mens-group-2026-03-25-19-00" target="_blank" rel="noopener">men's circle at Sacred Roots</a> in Charlotte — a space for men to gather in honest inquiry about what it means to be alive and fully present. Women's circles and online circles are forming. Whoever you are, the invitation is the same: come as you are, and be willing to go a little deeper.</p>
       <p class="offering-meta">In person · Charlotte, NC &nbsp;·&nbsp; Online circles forming</p>
     </div>
 
     <div class="offering reveal" id="rites">
       <span class="offering-eyebrow">Offering</span>
       <h2>Rites of Passage</h2>
-      <p>My own initiation work started because I wanted something for my son that I hadn't had — a real crossing, witnessed and intentional. What I found changed both of us. Right now my focus is on young men: helping them cross the threshold from boyhood into adulthood with intention, community, and the kind of challenge that actually means something.</p>
+      <p>My own initiation work started because I wanted something for my sons that I hadn't had — a real crossing, witnessed and intentional. What we found changed all of us. Right now my focus is on young men: helping them cross the threshold from boyhood into adulthood with intention, community, and the kind of challenge that actually means something.</p>
       <p>I work with <a href="https://www.jp4men.org/" target="_blank" rel="noopener">The Joshua Project</a> (rebranding in 2026 as Suns and Sages), an organization doing exactly this work. If you have a son — or know a young man — who is ready for something real, this is worth exploring.</p>
       <p>Programs for other ages and transitions are a work in progress.</p>
-      <p class="offering-meta">In person &nbsp;·&nbsp; By arrangement</p>
+      <p class="offering-meta">In person</p>
     </div>
 
-    <div class="offering offering-muted reveal" id="coaching">
-      <span class="coming-soon-tag">Coming Soon</span>
-      <h2>1-1 Coaching</h2>
-      <p>For anyone at a threshold — navigating a major transition, sitting with something they can't quite name, or just ready to be more honest about where they are. In person, online, or both.</p>
-    </div>
+    <div class="offering reveal" id="coaching">
+      <span class="offering-eyebrow">Offering</span>
+      <h2>Coaching</h2>
+      <p>I work with men who are standing at a threshold — between who they've been and who they're becoming — and are ready to make that crossing with intention.</p>
+      <p>Maybe your life no longer fits — career, relationships, loss, addiction — or maybe just that unnamed feeling that something needs to change and you can't keep deferring it. You might feel overwhelmed by a world that keeps accelerating while something in you is asking to slow down. You're not broken, and you don't need to feel alone. You're at a threshold. That's different.</p>
+      <p>I'm not here to tell you what your life should look like. But I can help you find out. What I bring to this work isn't a methodology — it's decades of my own crossings: getting sober, losing multiple friends to tragedy, drugs, and disease, losing my parents, the feelings of failure — and right now, navigating my own transition out of a long corporate career. Years in circles where people speak the truth, learning to be honest with myself, plant medicine, the courage to let go of parts of myself that don't serve me, and the slow practice of learning to be present with what is. Earned integrity, not performed expertise. I'm not standing at the other side of the river waving you across. I'm in it too — here's a piece of wood for us to cling to, let's paddle together.</p>
 
-    <div class="offering offering-muted reveal" id="couples">
-      <span class="coming-soon-tag">Coming Soon</span>
-      <h2>Couples Workshops</h2>
-      <p>Bringing the same quality of presence and honesty into relationship — with yourself and with another. More to come.</p>
+      <div class="coaching-sub reveal">
+        <div class="coaching-item">
+          <h3>1-1 Coaching</h3>
+          <p>If this sounds like what you might be looking for, <a href="contact.html">reach out and let's talk</a>.</p>
+          <p class="offering-meta">In person &amp; online</p>
+        </div>
+        <div class="coaching-item">
+          <h3>Couples Workshops <span class="coming-soon-tag">Coming Soon</span></h3>
+          <p>Developed in partnership with my wife — bringing the same quality of honest presence into relationship. More to come.</p>
+        </div>
+      </div>
     </div>
 
   </div>

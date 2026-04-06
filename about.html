@@ -152,20 +152,26 @@
       margin: 0 !important;
     }
 
-    /* ── BOTTOM PHOTO ── */
-    .photo-bottom {
-      max-width: 420px;
+    /* ── BOTTOM PHOTOS ── */
+    .photos-bottom {
+      max-width: 760px;
       margin: 0 auto 5rem;
       padding: 0 2rem;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
 
-    .photo-bottom img {
+    .photo-bottom-item img {
       width: 100%;
       height: 320px;
       object-fit: cover;
-      object-position: center 15%;
+      object-position: center 20%;
       display: block;
+    }
+
+    .photo-bottom-item:last-child img {
+      object-position: center 15%;
     }
 
     .photo-caption {
@@ -174,6 +180,11 @@
       color: var(--stone);
       margin-top: 0.8rem;
       letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      .photos-bottom { grid-template-columns: 1fr; }
+      .photo-bottom-item img { height: 260px; }
     }
 
     /* ── CREDENTIALS ── */
@@ -343,34 +354,44 @@
   <div class="about-body">
 
     <p class="reveal">
-      Over ten years ago when I was in my forties, I finally got sober. It wasn't because I hit rock bottom — it was because I was able to see my mess reflected in the faces of my sons, then 13 and 10. It was at a family-friendly music festival, and back then festival equated to "all day drinking." Saturday didn't end well. I was a mess. But in the fallout from that weekend, I was sickened to think that I might be anything less than my best for my boys. So I stopped drinking.
+      Over ten years ago when I was in my mid-forties, after about 30 years of drinking, I finally got sober. It wasn't because I hit rock bottom — it was because I was able to recognize who I was being in front of my sons, then 13 and 10. It was this one music festival which ended with me as a mess, and my wife livid and on the brink of leaving. I was sickened to think that I might be anything less than my best for my boys. I accepted that I needed to choose a new version of myself and I quit. Though, truth be told, it would take me many more years to realize that the alcohol was just a symptom of wounded and undeveloped parts of myself, and that my healing had only just begun.
     </p>
 
     <p class="reveal">
-      It just so happened that around the same time, my oldest son and I got involved in a rites of passage organization for young men. We were seeking an initiation experience for him that I hadn't had. Connecting with that community led us both into men's work — his growth, then his brother's, my own development as a facilitator and leader. And on and on. That journey is still going.
+      It just so happened that around the same time, my oldest son and I got involved in a rites of passage organization for young men. We were seeking an initiation experience for him that I hadn't had. Connecting with that community led us both into men's work — his growth, then his brother's, my own development as a facilitator and leader. And on and on. That journey is still underway.
     </p>
 
     <p class="reveal">
-      Then life kept happening. Nine years ago — this year — I lost my mom. A few years after that, I lost a job I'd built much of my identity around. Grief, failure, disorientation. What I found in those years was that the tools I'd already been gathering — meditation, men's work, plant medicine, honest community — weren't just nice practices for the good times. They were the things that actually held me together when things fell apart. Loss and failure as forging fire. I mean that literally, not as a bumper sticker.
+      Then life kept happening. Nine years ago this year, I lost my mom. I then took care of my dad, we healed our relationship, but then we lost him just 2 years later. Just recently I was let go from a long corporate career I'd built much of my identity around. So many other losses over the years. Grief, failure, disorientation. What I've found is that the tools I'd already been gathering — meditation, men's work, plant medicine, honest community — weren't just nice practices for the good times. They were the things that actually held me together when things fell apart. Loss and failure as forging fire. I mean that literally, not as a bumper sticker.
     </p>
 
     <p class="reveal">
-      These days I'm exploring how to introduce others to the transformative tools I've learned along the way. I'm completing my certification as a mindfulness meditation teacher through the program with Tara Brach and Jack Kornfield — not because I've arrived anywhere, but because I want to do this work well and with integrity. I teach at Sacred Roots in Charlotte and online.
+      I'm deep into my own crossing right now. And I'm using this moment to step more fully into work that actually matters to me — introducing others to the transformative tools I've found along the way. I'm called to share this not because I've arrived anywhere, but because I've learned something true about this journey: it's about connection, and about helping each other find our way back to ourselves. Sitting quietly in loving awareness and listening to each other feels like ancient technology we're slowly remembering.
     </p>
 
     <p class="reveal">
-      I also work in corporate technology and teach graduate courses in AI ethics. I've been with my wife for 29 years, married for 24. I love being outdoors, traveling, watching movies, and going deep on music — medicine music, EDM, the kind of sound that moves something in you. I don't live like a monk. I live like a person who is trying to pay attention, and who thinks that's actually worth doing.
+      A little more about me — I've been with my wife for 29 years, married for 24. She works with women, channeling the divine feminine and teaching feminine movement and embodiment. We have two amazing sons, 20 and 24. I love being outdoors, traveling, watching movies, and going deep on music — medicine music, EDM, the kind of sound that moves something in you. I teach a graduate course in IT Ethics that gives me an opportunity to lean into the conversations around AI. Having a center in nature-based, humanist practices while also appreciating the modern magic of technology gives me what I think is a balanced perspective on where we are as a species.
     </p>
 
     <p class="reveal">
-      If any of that resonates — if you're somewhere in the middle of your own forging fire, or just feeling called to go a little deeper — I'd love to connect.
+      I don't live like a monk. I live like a person who is trying to pay attention, and who thinks that's actually worth doing.
+    </p>
+
+    <p class="reveal">
+      If any of this resonates — if you're somewhere in the middle of your own forging fire, or just feeling called to go a little deeper — I'd love to connect.
     </p>
 
   </div>
 
-  <div class="photo-bottom reveal">
-    <img src="about-facilitating.jpg" alt="Eric facilitating">
-    <p class="photo-caption">Facilitating a men's circle</p>
+  <div class="photos-bottom reveal">
+    <div class="photo-bottom-item">
+      <img src="about-facilitating.jpg" alt="Eric facilitating a men's circle">
+      <p class="photo-caption">Men's retreat</p>
+    </div>
+    <div class="photo-bottom-item">
+      <img src="about-outdoors.jpg" alt="Eric in the Sierra Nevada">
+      <p class="photo-caption">Somewhere in the Sierra Nevada, slightly lost</p>
+    </div>
   </div>
 
   <section class="quote reveal">
