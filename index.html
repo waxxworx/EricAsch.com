@@ -36,479 +36,95 @@
 
     /* ── NAV ── */
     nav {
-      position: relative;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: relative; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 0.9rem 3rem;
       background: var(--bg);
       border-bottom: 1px solid var(--rule);
       min-height: 80px;
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      width: 65px;
-      height: 65px;
-      object-fit: contain;
-    }
-
-    .nav-logo-text {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 400;
-      font-size: 1.55rem;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      letter-spacing: 0.18em;
-      text-decoration: none;
-      color: var(--ink);
-      opacity: 0.7;
-      transition: opacity 0.25s;
-    }
-
+    .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+    .nav-logo img { width: 65px; height: 65px; object-fit: contain; }
+    .nav-logo-text { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1.55rem; letter-spacing: 0.04em; color: var(--ink); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: 'Cormorant SC', Georgia, serif; font-weight: 400; font-size: 1.05rem; letter-spacing: 0.18em; text-decoration: none; color: var(--ink); opacity: 0.7; transition: opacity 0.25s; }
     .nav-links a:hover { opacity: 1; }
 
     /* ── HERO ── */
-    .hero {
-      position: relative;
-      height: calc(100vh - 80px);
-      min-height: 540px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('hero.jpg') center 30% / cover no-repeat;
-      animation: zoomIn 14s ease-out forwards;
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(1.06); }
-      to   { transform: scale(1.0); }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(28,28,26,0.1)  0%,
-        rgba(28,28,26,0.55) 40%,
-        rgba(28,28,26,0.4)  65%,
-        rgba(28,28,26,0.08) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 2rem;
-      opacity: 0;
-      animation: riseIn 2s ease 0.5s forwards;
-    }
-
-    @keyframes riseIn {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-eyebrow {
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      letter-spacing: 0.32em;
-      color: rgba(245,240,232,0.85);
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-question {
-      font-weight: 300;
-      font-style: italic;
-      font-size: clamp(2.8rem, 6.5vw, 4.8rem);
-      line-height: 1.2;
-      color: var(--cream);
-      text-shadow: 0 2px 32px rgba(28,28,26,0.3);
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-rule {
-      width: 36px;
-      height: 1px;
-      background: rgba(245,240,232,0.4);
-      margin: 0 auto 2.5rem;
-    }
-
-    .hero-cta {
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      letter-spacing: 0.24em;
-      color: var(--cream);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(245,240,232,0.5);
-      padding-bottom: 3px;
-      opacity: 0.95;
-      transition: opacity 0.3s, border-color 0.3s;
-    }
-
-    .hero-cta:hover { opacity: 1; border-color: rgba(245,240,232,0.85); }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2.8rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      opacity: 0;
-      animation: riseIn 1.5s ease 2.2s forwards;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 52px;
-      background: linear-gradient(to bottom, rgba(245,240,232,0.55), transparent);
-      margin: 0 auto;
-      animation: pulse 2.8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { opacity: 0.4; }
-      50%      { opacity: 1; }
-    }
+    .hero { position: relative; height: calc(100vh - 80px); min-height: 540px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('hero.jpg') center 30% / cover no-repeat; animation: zoomIn 14s ease-out forwards; }
+    @keyframes zoomIn { from { transform: scale(1.06); } to { transform: scale(1.0); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,28,26,0.1) 0%, rgba(28,28,26,0.55) 40%, rgba(28,28,26,0.4) 65%, rgba(28,28,26,0.08) 100%); }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 2rem; opacity: 0; animation: riseIn 2s ease 0.5s forwards; }
+    @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { font-family: 'Cormorant SC', Georgia, serif; font-weight: 400; font-size: 1.05rem; letter-spacing: 0.32em; color: rgba(245,240,232,0.85); margin-bottom: 1.8rem; }
+    .hero-question { font-weight: 300; font-style: italic; font-size: clamp(2.8rem, 6.5vw, 4.8rem); line-height: 1.2; color: var(--cream); text-shadow: 0 2px 32px rgba(28,28,26,0.3); margin-bottom: 2.5rem; }
+    .hero-rule { width: 36px; height: 1px; background: rgba(245,240,232,0.4); margin: 0 auto 2.5rem; }
+    .scroll-indicator { position: absolute; bottom: 2.8rem; left: 50%; transform: translateX(-50%); z-index: 2; opacity: 0; animation: riseIn 1.5s ease 2.2s forwards; }
+    .scroll-line { width: 1px; height: 52px; background: linear-gradient(to bottom, rgba(245,240,232,0.55), transparent); margin: 0 auto; animation: pulse 2.8s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 
     /* ── INTRO ── */
-    .intro {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 8rem 2rem 6rem;
-      text-align: center;
-    }
-
-    .section-eyebrow {
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-weight: 300;
-      font-size: 0.85rem;
-      letter-spacing: 0.3em;
-      color: var(--earth);
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    .intro p {
-      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--ink-soft);
-    }
-
-    .intro em {
-      font-style: italic;
-      color: var(--bark);
-    }
+    .intro { max-width: 640px; margin: 0 auto; padding: 8rem 2rem 6rem; text-align: center; }
+    .section-eyebrow { font-family: 'Cormorant SC', Georgia, serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.3em; color: var(--earth); margin-bottom: 2rem; display: block; }
+    .intro p { font-size: clamp(1.35rem, 2.4vw, 1.65rem); font-weight: 300; line-height: 1.8; color: var(--ink-soft); }
+    .intro em { font-style: italic; color: var(--bark); }
 
     /* ── OFFERINGS ── */
-    .offerings {
-      padding: 0 2rem 8rem;
-    }
-
-    .offerings-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .section-rule-line {
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .tile {
-      padding: 2.8rem 1.8rem 2.4rem;
-      text-decoration: none;
-      color: var(--ink);
-      background: var(--bg);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: background 0.3s;
-    }
-
+    .offerings { padding: 0 2rem 8rem; }
+    .offerings-inner { max-width: 1080px; margin: 0 auto; }
+    .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
+    .section-rule-line { flex: 1; height: 1px; background: var(--rule); }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .tile { padding: 2.8rem 1.8rem 2.4rem; text-decoration: none; color: var(--ink); background: var(--bg); display: flex; flex-direction: column; gap: 1rem; transition: background 0.3s; }
     .tile:hover { background: var(--linen); }
-
-    .tile-muted {
-      opacity: 0.4;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .tile-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 400;
-      font-size: 1.25rem;
-      line-height: 1.3;
-    }
-
-    .tile-desc {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--bark);
-      flex: 1;
-    }
-
-    .tile-coming-soon {
-      font-style: italic;
-      color: var(--stone) !important;
-    }
-
-    .tile-arrow {
-      font-size: 1.1rem;
-      color: var(--earth);
-      display: inline-block;
-      transition: transform 0.3s, color 0.25s;
-      letter-spacing: -0.05em;
-    }
-
-    .tile:hover .tile-arrow {
-      transform: translateX(5px);
-      color: var(--bark);
-    }
+    .tile-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1.25rem; line-height: 1.3; }
+    .tile-desc { font-size: 1rem; font-weight: 300; line-height: 1.7; color: var(--bark); flex: 1; }
+    .tile-arrow { font-size: 1.1rem; color: var(--earth); display: inline-block; transition: transform 0.3s, color 0.25s; letter-spacing: -0.05em; }
+    .tile:hover .tile-arrow { transform: translateX(5px); color: var(--bark); }
 
     /* ── QUOTE ── */
-    .quote {
-      background: var(--linen);
-      padding: 7rem 2rem;
-      text-align: center;
-    }
-
-    .quote blockquote {
-      max-width: 520px;
-      margin: 0 auto;
-      font-style: italic;
-      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--ink-soft);
-    }
-
-    .quote cite {
-      display: block;
-      margin-top: 1.8rem;
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-style: normal;
-      font-size: 0.9rem;
-      letter-spacing: 0.22em;
-      color: var(--stone);
-    }
+    .quote { background: var(--linen); padding: 7rem 2rem; text-align: center; }
+    .quote blockquote { max-width: 520px; margin: 0 auto; font-style: italic; font-size: clamp(1.35rem, 2.4vw, 1.65rem); font-weight: 300; line-height: 1.85; color: var(--ink-soft); }
+    .quote cite { display: block; margin-top: 1.8rem; font-family: 'Cormorant SC', Georgia, serif; font-style: normal; font-size: 0.9rem; letter-spacing: 0.22em; color: var(--stone); }
 
     /* ── SIGNUP BAND ── */
-    .signup-band {
-      background: var(--bg);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 4.5rem 2rem;
-      text-align: center;
-    }
-
-    .signup-band-inner {
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    .signup-heading {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
-      color: var(--ink);
-      margin-bottom: 0.6rem;
-    }
-
-    .signup-sub {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--stone);
-      margin-bottom: 2.2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .signup-row {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--rule);
-      transition: border-color 0.25s;
-    }
-
-    .signup-row:focus-within {
-      border-bottom-color: var(--earth);
-    }
-
-    .signup-row input[type="email"] {
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: 0.65rem 0.5rem 0.65rem 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: var(--ink);
-      outline: none;
-    }
-
-    .signup-row input[type="email"]::placeholder {
-      color: var(--stone);
-      opacity: 0.7;
-    }
-
-    .signup-row button {
-      background: none;
-      border: none;
-      padding: 0.65rem 0 0.65rem 1rem;
-      font-family: 'Cormorant SC', Georgia, serif;
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: var(--earth);
-      cursor: pointer;
-      transition: color 0.25s;
-      white-space: nowrap;
-    }
-
-    .signup-row button:hover { color: var(--bark); }
-
-    .signup-note {
-      margin-top: 1.1rem;
-      font-style: italic;
-      font-size: 0.88rem;
-      color: var(--stone);
-      opacity: 0.8;
-    }
+    .signup-band { background: var(--bg); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 4.5rem 2rem; text-align: center; }
+    .signup-band-inner { max-width: 480px; margin: 0 auto; }
+    .signup-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-style: italic; font-size: clamp(1.5rem, 2.5vw, 1.9rem); color: var(--ink); margin-bottom: 0.6rem; }
+    .signup-sub { font-size: 1rem; font-weight: 300; color: var(--stone); margin-bottom: 2.2rem; letter-spacing: 0.02em; }
+    .ml-signup-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); transition: border-color 0.25s; }
+    .ml-signup-row:focus-within { border-bottom-color: var(--earth); }
+    .ml-signup-row input[type="email"] { flex: 1; background: transparent; border: none; padding: 0.65rem 0.5rem 0.65rem 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-weight: 300; color: var(--ink); outline: none; }
+    .ml-signup-row input[type="email"]::placeholder { color: var(--stone); opacity: 0.7; }
+    .ml-signup-row button { background: none; border: none; padding: 0.65rem 0 0.65rem 1rem; font-family: 'Cormorant SC', Georgia, serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.2em; color: var(--earth); cursor: pointer; transition: color 0.25s; white-space: nowrap; }
+    .ml-signup-row button:hover { color: var(--bark); }
+    .signup-note { margin-top: 1.1rem; font-style: italic; font-size: 0.88rem; color: var(--stone); opacity: 0.8; }
 
     /* ── FOOTER ── */
-    footer {
-      padding: 2.5rem 3rem;
-      background: var(--bg);
-      border-top: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .footer-left img {
-      width: 36px;
-    }
-
-    .footer-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      color: var(--stone);
-    }
-
-    .footer-right {
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--stone);
-    }
-
-    .footer-right a {
-      color: var(--earth);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.25s;
-    }
-
+    footer { padding: 2.5rem 3rem; background: var(--bg); border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { display: flex; align-items: center; gap: 0.7rem; }
+    .footer-left img { width: 36px; }
+    .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0.04em; color: var(--stone); }
+    .footer-right { font-style: italic; font-size: 1rem; color: var(--stone); }
+    .footer-right a { color: var(--earth); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s; }
     .footer-right a:hover { border-color: var(--earth); }
+    .version { font-style: normal; font-family: 'Cormorant SC', serif; font-size: 0.85rem; color: var(--bark); letter-spacing: 0.1em; }
 
-    .version {
-      font-style: normal;
-      font-family: 'Cormorant SC', serif;
-      font-size: 0.85rem;
-      color: var(--bark);
-      letter-spacing: 0.1em;
-    }
-
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-        padding: 1rem 1.4rem;
-        min-height: auto;
-      }
+      nav { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 1rem 1.4rem; min-height: auto; }
       .nav-logo img { width: 48px; height: 48px; }
       .nav-logo-text { font-size: 1.2rem; }
       .nav-links { gap: 1.4rem; }
       .nav-links a { font-size: 0.95rem; }
     }
-
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (max-width: 380px) {
-      .grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
 
     /* ── REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
@@ -586,10 +202,17 @@
   <section class="signup-band reveal">
     <div class="signup-band-inner">
       <p class="signup-heading">Stay connected.</p>
-      <p class="signup-sub">Occasional reflections, updates on offerings, and what's alive in the work.</p>
-      <div class="signup-row">
-        <input type="email" placeholder="your@email.com" id="ml-signup-email">
-        <button type="button" onclick="mlSignup()">Subscribe</button>
+      <p class="signup-sub">Occasional reflections, updates on offerings, and what&#8217;s alive in the work.</p>
+      <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2248736/forms/184027273481946176/subscribe" method="post" target="_blank">
+        <div class="ml-signup-row">
+          <input aria-label="email" aria-required="true" type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" id="ml-email-input">
+          <button type="submit">Subscribe</button>
+        </div>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+      </form>
+      <div class="ml-success" style="display:none">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:#8B7355;text-align:center;margin:0 0 0.8rem">Thank you. You&#8217;ll hear from me when something worth sharing comes up.</p>
       </div>
       <p class="signup-note">No noise. Unsubscribe anytime.</p>
     </div>
@@ -602,40 +225,31 @@
     </div>
     <p class="footer-right">
       <a id="email-link" href="#">eric&#64;ericasch.com</a>
-      &nbsp;·&nbsp; Charlotte, NC &amp; online
-      &nbsp;·&nbsp; <span class="version">v18</span>
+      &nbsp;&#183;&nbsp; Charlotte, NC &amp; online
+      &nbsp;&#183;&nbsp; <span class="version">v18</span>
     </p>
   </footer>
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2248736');
-  </script>
-  <!-- End MailerLite Universal -->
 
   <script>
     document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
 
-    function mlSignup() {
-      const email = document.getElementById('ml-signup-email').value;
-      if (!email || !email.includes('@')) return;
-      ml('subscribe', { email: email });
-      const row = document.querySelector('.signup-row');
-      const note = document.querySelector('.signup-note');
-      row.style.display = 'none';
-      note.textContent = 'Thank you. You\'ll hear from me when something worth sharing comes up.';
-      note.style.opacity = '1';
-      note.style.fontStyle = 'normal';
-      note.style.color = 'var(--earth)';
+    var mlForm = document.querySelector('.ml-block-form');
+    if (mlForm) {
+      mlForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('ml-email-input').value;
+        if (!email || !email.includes('@')) return;
+        fetch(mlForm.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(mlForm)),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).finally(function() {
+          mlForm.style.display = 'none';
+          document.querySelector('.ml-success').style.display = 'block';
+          document.querySelector('.signup-note').style.display = 'none';
+        });
+      });
     }
-
-    document.getElementById('ml-signup-email').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') mlSignup();
-    });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -645,7 +259,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 

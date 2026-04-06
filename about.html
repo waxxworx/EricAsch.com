@@ -9,35 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg:         #F7F4EF;
-      --linen:      #EDE6D6;
-      --cream:      #F5F0E8;
-      --bark:       #6B5B45;
-      --earth:      #8B7355;
-      --stone:      #9C9385;
-      --ink:        #1C1C1A;
-      --ink-soft:   #2E2C28;
-      --rule:       rgba(107, 91, 69, 0.18);
-    }
+    :root { --bg: #F7F4EF; --linen: #EDE6D6; --cream: #F5F0E8; --bark: #6B5B45; --earth: #8B7355; --stone: #9C9385; --ink: #1C1C1A; --ink-soft: #2E2C28; --rule: rgba(107, 91, 69, 0.18); }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300;
-      font-size: 18px;
-      -webkit-font-smoothing: antialiased;
-    }
-    /* ── NAV ── */
-    nav {
-      position: relative; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 3rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-      min-height: 80px;
-    }
+    body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 18px; -webkit-font-smoothing: antialiased; }
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); min-height: 80px; }
     .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
     .nav-logo img { width: 65px; height: 65px; object-fit: contain; }
     .nav-logo-text { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1.55rem; letter-spacing: 0.04em; color: var(--ink); }
@@ -45,47 +20,34 @@
     .nav-links a { font-family: 'Cormorant SC', Georgia, serif; font-weight: 400; font-size: 1.05rem; letter-spacing: 0.18em; text-decoration: none; color: var(--ink); opacity: 0.7; transition: opacity 0.25s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--earth); padding-bottom: 2px; }
-    /* ── PAGE HEADER ── */
     .page-header { padding: 6rem 2rem 4rem; text-align: center; max-width: 640px; margin: 0 auto; }
     .page-eyebrow { font-family: 'Cormorant SC', Georgia, serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.3em; color: var(--earth); display: block; margin-bottom: 1.5rem; }
     .page-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-style: italic; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.2; color: var(--ink); }
-    /* ── BODY CONTENT ── */
     .about-body { max-width: 680px; margin: 0 auto; padding: 0 2rem 6rem; }
     .about-body p { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 300; line-height: 1.95; color: var(--ink-soft); margin-bottom: 2rem; }
     .about-body p:last-child { margin-bottom: 0; }
     .about-body em { font-style: italic; color: var(--bark); }
-    /* ── PULL QUOTE ── */
     .pull-quote { border-left: 2px solid var(--earth); padding: 0.5rem 0 0.5rem 2rem; margin: 3rem 0; }
     .pull-quote p { font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.45rem) !important; color: var(--bark) !important; line-height: 1.75 !important; margin: 0 !important; }
-    /* ── BOTTOM PHOTOS ── */
     .photos-bottom { max-width: 760px; margin: 0 auto 5rem; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .photo-bottom-item img { width: 100%; height: 320px; object-fit: cover; object-position: center 20%; display: block; }
     .photo-bottom-item:last-child img { object-position: center 15%; }
     .photo-caption { font-style: italic; font-size: 0.9rem; color: var(--stone); margin-top: 0.8rem; letter-spacing: 0.04em; }
     @media (max-width: 600px) { .photos-bottom { grid-template-columns: 1fr; } .photo-bottom-item img { height: 260px; } }
-    /* ── QUOTE ── */
     .quote { background: var(--linen); padding: 6rem 2rem; text-align: center; }
     .quote blockquote { max-width: 520px; margin: 0 auto; font-style: italic; font-size: clamp(1.25rem, 2.2vw, 1.5rem); font-weight: 300; line-height: 1.85; color: var(--ink-soft); }
     .quote cite { display: block; margin-top: 1.6rem; font-family: 'Cormorant SC', Georgia, serif; font-style: normal; font-size: 0.85rem; letter-spacing: 0.22em; color: var(--stone); }
-    /* ── SIGNUP BAND ── */
-    .signup-band {
-      background: var(--bg);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 4.5rem 2rem;
-      text-align: center;
-    }
+    .signup-band { background: var(--bg); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 4.5rem 2rem; text-align: center; }
     .signup-band-inner { max-width: 480px; margin: 0 auto; }
     .signup-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-style: italic; font-size: clamp(1.5rem, 2.5vw, 1.9rem); color: var(--ink); margin-bottom: 0.6rem; }
     .signup-sub { font-size: 1rem; font-weight: 300; color: var(--stone); margin-bottom: 2.2rem; letter-spacing: 0.02em; }
-    .signup-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); transition: border-color 0.25s; }
-    .signup-row:focus-within { border-bottom-color: var(--earth); }
-    .signup-row input[type="email"] { flex: 1; background: transparent; border: none; padding: 0.65rem 0.5rem 0.65rem 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-weight: 300; color: var(--ink); outline: none; }
-    .signup-row input[type="email"]::placeholder { color: var(--stone); opacity: 0.7; }
-    .signup-row button { background: none; border: none; padding: 0.65rem 0 0.65rem 1rem; font-family: 'Cormorant SC', Georgia, serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.2em; color: var(--earth); cursor: pointer; transition: color 0.25s; white-space: nowrap; }
-    .signup-row button:hover { color: var(--bark); }
+    .ml-signup-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); transition: border-color 0.25s; }
+    .ml-signup-row:focus-within { border-bottom-color: var(--earth); }
+    .ml-signup-row input[type="email"] { flex: 1; background: transparent; border: none; padding: 0.65rem 0.5rem 0.65rem 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-weight: 300; color: var(--ink); outline: none; }
+    .ml-signup-row input[type="email"]::placeholder { color: var(--stone); opacity: 0.7; }
+    .ml-signup-row button { background: none; border: none; padding: 0.65rem 0 0.65rem 1rem; font-family: 'Cormorant SC', Georgia, serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.2em; color: var(--earth); cursor: pointer; transition: color 0.25s; white-space: nowrap; }
+    .ml-signup-row button:hover { color: var(--bark); }
     .signup-note { margin-top: 1.1rem; font-style: italic; font-size: 0.88rem; color: var(--stone); opacity: 0.8; }
-    /* ── FOOTER ── */
     footer { padding: 2.5rem 3rem; background: var(--bg); border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-left { display: flex; align-items: center; gap: 0.7rem; }
     .footer-left img { width: 30px; }
@@ -93,16 +55,7 @@
     .footer-right { font-style: italic; font-size: 1rem; color: var(--stone); }
     .footer-right a { color: var(--earth); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s; }
     .footer-right a:hover { border-color: var(--earth); }
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      nav { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 1rem 1.4rem; min-height: auto; }
-      .nav-logo img { width: 48px; height: 48px; }
-      .nav-logo-text { font-size: 1.2rem; }
-      .nav-links { gap: 1.4rem; }
-      .nav-links a { font-size: 0.95rem; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-    }
-    /* ── REVEAL ── */
+    @media (max-width: 700px) { nav { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 1rem 1.4rem; min-height: auto; } .nav-logo img { width: 48px; height: 48px; } .nav-logo-text { font-size: 1.2rem; } .nav-links { gap: 1.4rem; } .nav-links a { font-size: 0.95rem; } footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; } }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
@@ -157,10 +110,17 @@
   <section class="signup-band reveal">
     <div class="signup-band-inner">
       <p class="signup-heading">Stay connected.</p>
-      <p class="signup-sub">Occasional reflections, updates on offerings, and what's alive in the work.</p>
-      <div class="signup-row">
-        <input type="email" placeholder="your@email.com" id="ml-signup-email">
-        <button type="button" onclick="mlSignup()">Subscribe</button>
+      <p class="signup-sub">Occasional reflections, updates on offerings, and what&#8217;s alive in the work.</p>
+      <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2248736/forms/184027273481946176/subscribe" method="post" target="_blank">
+        <div class="ml-signup-row">
+          <input aria-label="email" aria-required="true" type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" id="ml-email-input">
+          <button type="submit">Subscribe</button>
+        </div>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+      </form>
+      <div class="ml-success" style="display:none">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:#8B7355;text-align:center;margin:0 0 0.8rem">Thank you. You&#8217;ll hear from me when something worth sharing comes up.</p>
       </div>
       <p class="signup-note">No noise. Unsubscribe anytime.</p>
     </div>
@@ -173,39 +133,30 @@
     </div>
     <p class="footer-right">
       <a id="email-link" href="#">eric&#64;ericasch.com</a>
-      &nbsp;·&nbsp; Charlotte, NC &amp; online
+      &nbsp;&#183;&nbsp; Charlotte, NC &amp; online
     </p>
   </footer>
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2248736');
-  </script>
-  <!-- End MailerLite Universal -->
 
   <script>
     document.getElementById('email-link').href = 'mailto:' + 'eric' + '@' + 'ericasch.com';
 
-    function mlSignup() {
-      const email = document.getElementById('ml-signup-email').value;
-      if (!email || !email.includes('@')) return;
-      ml('subscribe', { email: email });
-      const row = document.querySelector('.signup-row');
-      const note = document.querySelector('.signup-note');
-      row.style.display = 'none';
-      note.textContent = 'Thank you. You\'ll hear from me when something worth sharing comes up.';
-      note.style.opacity = '1';
-      note.style.fontStyle = 'normal';
-      note.style.color = 'var(--earth)';
+    var mlForm = document.querySelector('.ml-block-form');
+    if (mlForm) {
+      mlForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('ml-email-input').value;
+        if (!email || !email.includes('@')) return;
+        fetch(mlForm.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(mlForm)),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).finally(function() {
+          mlForm.style.display = 'none';
+          document.querySelector('.ml-success').style.display = 'block';
+          document.querySelector('.signup-note').style.display = 'none';
+        });
+      });
     }
-
-    document.getElementById('ml-signup-email').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') mlSignup();
-    });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -215,7 +166,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
