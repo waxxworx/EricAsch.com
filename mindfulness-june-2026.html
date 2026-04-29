@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction to Mindfulness Meditation — Eric Asch</title>
+<meta name="description" content="A four-week introductory course in mindfulness meditation with Eric Asch. Two sessions available in Charlotte, NC — June 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --linen:      #F7F4EF;
+    --linen-dark: #EDE9E1;
+    --green-deep: #2D5016;
+    --green-mid:  #4A7C2F;
+    --warm-gray:  #8B8478;
+    --near-black: #2C2C2C;
+    --rule:       #C8C0B0;
+    --rule-light: #DDD8CF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--linen);
+    color: var(--near-black);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav — mirrors ericasch.com ──────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(247, 244, 239, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .nav-logo { width: 65px; height: 65px; object-fit: contain; }
+  .nav-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--near-black);
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--near-black); }
+
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    padding: 144px 48px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--warm-gray);
+    margin-bottom: 28px;
+  }
+  .hero-title-light {
+    font-size: clamp(44px, 6vw, 66px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--near-black);
+    display: block;
+  }
+  .hero-title-italic {
+    font-size: clamp(54px, 7.5vw, 84px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.0;
+    color: var(--green-deep);
+    display: block;
+    margin-bottom: 22px;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--warm-gray);
+    margin-bottom: 48px;
+  }
+  .hero-rule { width: 40px; height: 1px; background: var(--rule); margin: 0 auto 48px; }
+  .hero-quote {
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .hero-quote-attr {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--green-mid);
+    margin-bottom: 52px;
+  }
+  .hero-description {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ── Section divider ─────────────────────────────── */
+  .section-rule { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  .section-rule hr { border: none; border-top: 1px solid var(--rule); }
+
+  /* ── Why ─────────────────────────────────────────── */
+  .why {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 48px;
+    text-align: center;
+  }
+  .why-title {
+    font-size: clamp(24px, 2.8vw, 32px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--green-deep);
+    margin-bottom: 22px;
+  }
+  .why-body {
+    font-size: clamp(17px, 1.9vw, 21px);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ── Sessions ────────────────────────────────────── */
+  .sessions-section { max-width: 1000px; margin: 0 auto; padding: 0 48px 90px; }
+  .sessions-heading {
+    text-align: center;
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--warm-gray);
+    margin-bottom: 36px;
+  }
+  .sessions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .session-card {
+    border: 1px solid var(--rule);
+    padding: 46px 40px 40px;
+    text-align: center;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .session-card:hover {
+    border-color: var(--green-mid);
+    box-shadow: 0 4px 40px rgba(45, 80, 22, 0.08);
+  }
+  .session-day-label {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--warm-gray);
+    margin-bottom: 18px;
+  }
+  .session-dates {
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .session-dates .dot { color: var(--warm-gray); margin: 0 7px; font-weight: 300; }
+  .session-time { font-size: clamp(22px, 2.6vw, 28px); font-weight: 400; margin-bottom: 22px; }
+  .session-divider { width: 30px; height: 1px; background: var(--rule); margin: 0 auto 22px; }
+  .session-venue { font-size: clamp(18px, 2vw, 22px); font-weight: 400; color: var(--green-deep); margin-bottom: 8px; }
+  .session-address { font-size: 15px; font-weight: 300; color: var(--warm-gray); margin-bottom: 34px; line-height: 1.55; }
+  .session-cta {
+    display: inline-block;
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--linen);
+    background: var(--green-deep);
+    padding: 14px 32px;
+    text-decoration: none;
+    border: 1px solid var(--green-deep);
+    transition: background 0.2s, color 0.2s;
+    margin-top: auto;
+  }
+  .session-cta:hover { background: transparent; color: var(--green-deep); }
+
+  /* ── Curriculum ──────────────────────────────────── */
+  .curriculum { max-width: 900px; margin: 0 auto; padding: 0 48px 80px; }
+  .curriculum-heading {
+    text-align: center;
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--warm-gray);
+    margin-bottom: 36px;
+  }
+  .weeks-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .week-item {
+    border-top: 1px solid var(--rule);
+    padding: 24px 18px 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .week-item.visible { opacity: 1; transform: translateY(0); }
+  .week-item:nth-child(2) { transition-delay: 0.08s; }
+  .week-item:nth-child(3) { transition-delay: 0.16s; }
+  .week-item:nth-child(4) { transition-delay: 0.24s; }
+  .week-label {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+  .week-number { font-size: 38px; font-weight: 300; color: var(--rule); line-height: 1; margin-bottom: 10px; }
+  .week-title { font-style: italic; font-size: clamp(15px, 1.7vw, 18px); font-weight: 300; line-height: 1.4; }
+
+  /* ── Practical ───────────────────────────────────── */
+  .practical {
+    background: var(--linen-dark);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 70px 48px;
+  }
+  .practical-inner { max-width: 900px; margin: 0 auto; }
+  .practical-heading {
+    text-align: center;
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--warm-gray);
+    margin-bottom: 44px;
+  }
+  .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px 68px; }
+  .practical-label {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--green-mid);
+    margin-bottom: 10px;
+  }
+  .practical-value { font-size: clamp(16px, 1.8vw, 19px); font-weight: 300; line-height: 1.65; }
+
+  /* ── Practicum note ──────────────────────────────── */
+  .practicum { max-width: 900px; margin: 0 auto; padding: 60px 48px 70px; text-align: center; }
+  .practicum-text {
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* ── Footer — mirrors ericasch.com ───────────────── */
+  footer {
+    border-top: 1px solid var(--rule-light);
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .footer-logo { width: 40px; height: 40px; object-fit: contain; opacity: 0.85; }
+  .footer-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--near-black);
+  }
+  .footer-right {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-right a { color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
+  .footer-right a:hover { color: var(--near-black); }
+  .footer-dot { color: var(--rule); }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 700px) {
+    nav { padding: 0 24px; }
+    .nav-logo { width: 48px; height: 48px; }
+    .nav-name { font-size: 18px; }
+    .nav-links { display: none; }
+    .hero { padding: 120px 24px 60px; }
+    .section-rule, .why, .sessions-section, .curriculum, .practicum { padding-left: 24px; padding-right: 24px; }
+    .practical { padding: 52px 24px; }
+    footer { padding: 0 24px; height: auto; padding-top: 20px; padding-bottom: 20px; flex-direction: column; gap: 12px; }
+    .sessions-grid { grid-template-columns: 1fr; }
+    .weeks-grid { grid-template-columns: 1fr 1fr; }
+    .week-item { padding-bottom: 24px; }
+    .practical-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://ericasch.com" class="nav-brand">
+    <img src="https://ericasch.com/nandi.png" alt="" class="nav-logo">
+    <span class="nav-name">Eric Isaac Asch</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://ericasch.com/about">About</a></li>
+    <li><a href="https://ericasch.com/offerings">Offerings</a></li>
+    <li><a href="https://ericasch.com/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">ERIC ASCH &nbsp;·&nbsp; CHARLOTTE, NC &nbsp;·&nbsp; JUNE 2026</p>
+  <span class="hero-title-light">Introduction to</span>
+  <span class="hero-title-italic">Mindfulness Meditation</span>
+  <p class="hero-tagline">A Four-Week Introductory Course</p>
+  <div class="hero-rule"></div>
+  <p class="hero-quote">"Meditation is not evasion; it is a serene encounter with reality."</p>
+  <p class="hero-quote-attr">— Thich Nhất Hạnh</p>
+  <p class="hero-description">A four-week journey into the foundations of mindfulness practice — learning to rest in awareness, work skillfully with emotions, open the heart, and carry practice into everyday life.</p>
+</section>
+
+<div class="section-rule"><hr></div>
+
+<section class="why">
+  <h2 class="why-title">Why Mindfulness?</h2>
+  <p class="why-body">Research consistently shows that a regular mindfulness practice can reduce stress and anxiety, improve emotional regulation, deepen self-awareness, strengthen focus and clarity, and support greater calm in everyday life — not by fixing what's broken, but by helping you meet what's already here.</p>
+</section>
+
+<div class="section-rule"><hr></div>
+
+<section class="sessions-section" style="padding-top: 70px;">
+  <p class="sessions-heading">TWO SESSIONS AVAILABLE — REGISTER BELOW</p>
+  <div class="sessions-grid">
+    <div class="session-card">
+      <p class="session-day-label">THURSDAYS IN JUNE 2026</p>
+      <p class="session-dates">June 4 <span class="dot">·</span> June 11 <span class="dot">·</span> June 18 <span class="dot">·</span> June 25</p>
+      <p class="session-time">6:00–7:30 PM</p>
+      <div class="session-divider"></div>
+      <p class="session-venue">Rising Tea &amp; Alchemy</p>
+      <p class="session-address">2132 McClintock Road<br>Charlotte, NC 28208</p>
+      <a class="session-cta" href="https://www.facebook.com/events/1333995098791872/1333995102125205?active_tab=about" target="_blank" rel="noopener">Register for This Session</a>
+    </div>
+    <div class="session-card">
+      <p class="session-day-label">SUNDAYS IN JUNE 2026</p>
+      <p class="session-dates">June 7 <span class="dot">·</span> June 14 <span class="dot">·</span> June 21 <span class="dot">·</span> June 28</p>
+      <p class="session-time">4:00–5:30 PM</p>
+      <div class="session-divider"></div>
+      <p class="session-venue">Sacred Roots</p>
+      <p class="session-address">5801 Simpson Road<br>Charlotte, NC</p>
+      <a class="session-cta" href="https://www.sacredrootsnc.com/event-details/introduction-to-mindfulness-meditation-2026-06-04-19-00" target="_blank" rel="noopener">Register for This Session</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"><hr></div>
+
+<section class="curriculum" style="padding-top: 70px;">
+  <p class="curriculum-heading">WHAT YOU'LL EXPLORE</p>
+  <div class="weeks-grid">
+    <div class="week-item">
+      <p class="week-label">WEEK 1</p>
+      <p class="week-number">01</p>
+      <p class="week-title">Foundations of Mindfulness</p>
+    </div>
+    <div class="week-item">
+      <p class="week-label">WEEK 2</p>
+      <p class="week-number">02</p>
+      <p class="week-title">Working with Emotions &amp; RAIN</p>
+    </div>
+    <div class="week-item">
+      <p class="week-label">WEEK 3</p>
+      <p class="week-number">03</p>
+      <p class="week-title">Heart Practices &amp; Compassion</p>
+    </div>
+    <div class="week-item">
+      <p class="week-label">WEEK 4</p>
+      <p class="week-number">04</p>
+      <p class="week-title">Integration into Daily Life</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"><hr></div>
+
+<section class="practical">
+  <div class="practical-inner">
+    <p class="practical-heading">PRACTICAL INFORMATION</p>
+    <div class="practical-grid">
+      <div>
+        <p class="practical-label">WHO THIS IS FOR</p>
+        <p class="practical-value">Suitable for beginners and experienced meditators alike. All are welcome.</p>
+      </div>
+      <div>
+        <p class="practical-label">FEE</p>
+        <p class="practical-value"><span style="text-decoration: line-through; color: var(--warm-gray); font-weight: 300;">$108</span>&nbsp; <strong style="color: var(--green-deep); font-weight: 500;">$54</strong>&nbsp; <em style="font-size: 0.85em; color: var(--warm-gray);">introductory rate</em></p>
+      </div>
+      <div>
+        <p class="practical-label">CLASS SIZE</p>
+        <p class="practical-value">Limited to 10 participants per session. Space is limited — please register now.</p>
+      </div>
+      <div>
+        <p class="practical-label">QUESTIONS</p>
+        <p class="practical-value"><a href="mailto:eric@ericasch.com" style="color:inherit;">eric@ericasch.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="practicum">
+  <p class="practicum-text">This course is a practicum offering supporting Eric's certification through the Mindfulness Meditation Teacher Certification Program with Jack Kornfield &amp; Tara Brach.</p>
+</section>
+
+<footer>
+  <a href="https://ericasch.com" class="footer-brand">
+    <img src="https://ericasch.com/nandi.png" alt="" class="footer-logo">
+    <span class="footer-name">Eric Isaac Asch</span>
+  </a>
+  <div class="footer-right">
+    <a href="mailto:eric@ericasch.com">eric@ericasch.com</a>
+    <span class="footer-dot">·</span>
+    <span>Charlotte, NC &amp; online</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.week-item').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
